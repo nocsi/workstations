@@ -1,0 +1,18 @@
+$backend_ip = "192.168.15.111"
+Vagrant.configure("2") do |config|
+    config.vm.box = "jhcook/osx-elcapitan-10.11"
+
+    config.vm.provider "virtualbox" do |vb|
+        vb.customize ["modifyvm", :id, "--usb", "off"]
+        vb.customize ["modifyvm", :id, "--usbehci", "off"]
+    end
+
+    config.vm.define :appliance, primary: true do |app|
+        app.vm.network :private_network, ip $backend_ip
+        app.vm.provision "ansible" do |ansible|
+            ansible.verbose = "v"
+            ansible.playbook = "ansible/playbook.yml"
+            ansible.inventory_path = "ansible/inventory_vagrant.ini"
+        end
+    end
+end

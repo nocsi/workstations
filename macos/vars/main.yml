@@ -1,0 +1,70 @@
+---
+downloads: ~/.ansible-downloads/
+
+configure_sudoers: yes
+
+dotfiles_repo: https://github.com/nocsigroup/dotfiles.git
+dotfiles_repo_accept_hostkey: yes
+#dotfiles_repo_local_destination: ~/Dropbox/Development/GitHub/dotfiles change to icloud drive
+dotfiles_files:
+  - .bash_profile
+  - .gitconfig
+  - .gitignore
+  - .inputrc
+  - .osx
+  - .vimrc
+
+homebrew_installed_packages:
+  - autoconf
+  - bash-completion
+  - gettext
+  - git
+  - go
+  - gpg
+  - hub
+  - httpie
+  - iperf
+  - libdvdcss
+  - libevent
+  - packer
+  - python
+  - sqlite
+  - mcrypt
+  - mysql
+  - nmap
+  - npm
+  - nvm
+  - ssh-copy-id
+  - readline
+  - subversion
+  - openssl
+  - pv
+  - drush
+  - wget
+  - wrk
+
+homebrew_taps:
+  - homebrew/core
+  - caskroom/cask
+  - homebrew/binary
+  - homebrew/dupes
+  - homebrew/php
+  - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - docker
+  - firefox
+  - google-chrome
+  - iterm2
+  - kdiff3
+  - licecap
+  - macvim
+  - skitch
+  - slack
+  - sublime-text
+  - transmit
+  - vagrant
+  - virtualbox
+  - vlc
+  - vmware-fusion
